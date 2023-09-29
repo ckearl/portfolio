@@ -1,0 +1,69 @@
+.container-slide-track {
+    place-items: center;
+    display: grid;
+    min-height: 50vh;
+  }
+  .slide-track {
+    width: 100%;
+    height: 30rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: lightblue;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .carousel {
+    height: 15rem;
+    display: flex;
+    width: calc(10rem * 20);
+  }
+  
+  .slide-track:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-240px * 10));
+    }
+  }
+  .card {
+    height: 10rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    perspective: 100px;
+    background: grey;
+  }
+  
+  .card span {
+    width: 100%;
+  }
+  
+  .carousel::before,
+  .carousel::after {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 7%;
+    z-index: 2;
+  }
+  
+  .carousel::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .carousel::after {
+    right: 0;
+    top: 0;
+    transform:rotateZ(180deg);
+  }
