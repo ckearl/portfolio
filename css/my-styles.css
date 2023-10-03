@@ -1,34 +1,25 @@
 .container-slide-track {
-    place-items: center;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 50vh;
   }
   .slide-track {
     width: 100%;
-    height: 30rem;
-    position: relative;
     overflow: hidden;
-    display: grid;
-    place-items: center;
-    text-align: center;
   }
   
   .carousel-right {
-    height: 15rem;
-    display: flex;
-    width: calc(10rem * 20);
-    animation: scroll-right 40s linear infinite;
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
+    animation: scroll-right 30s linear infinite;
   }
 
   .carousel-left {
-    height: 15rem;
-    display: flex;
-    width: calc(10rem * 20);
-    animation: scroll-left 40s linear infinite;
     display: flex;
     align-items: center;
+    animation: scroll-left 30s linear infinite;
   }
   .carousel-right:hover {
     animation-play-state: paused;
@@ -43,27 +34,22 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-8rem * 10));
+      transform: translateX(-100%);
     }
   }
 
   @keyframes scroll-left {
     0% {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
     100% {
-      transform: translateX(calc(8rem * 10));
+      transform: translateX(0);
     }
   }
 
   .carousel-card {
-    height: 10rem;
-    width: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 18px;
-    margin-right: 18px;
+    flex: 0 0 10rem;
+    margin: 0 1rem;
   }
   
   .carousel-card img {
